@@ -19,3 +19,11 @@ Route::get('/category-products', [
  'uses'  => 'NewShopController@categoryProducts',
  'as'    =>  'category-products'
 ]);
+Route::get('/mail-us', [
+ 'uses'  => 'NewShopController@mailUs',
+ 'as'    =>  'mail-us'
+]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

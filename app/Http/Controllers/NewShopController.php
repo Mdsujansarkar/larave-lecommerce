@@ -13,4 +13,8 @@ class NewShopController extends Controller
     	return view('front-end.category.category-content');
 
     }
+    public function mailUs(){
+    	return view('front-end.mail.maleUs');
+
+    }
 }
