@@ -62,9 +62,21 @@ Route::get('/brand/add', [
  'uses'  => 'brandController@index',
  'as'    =>  'add-brand'
 ]);
-Route::get('/brand/save', [
- 'uses'  => 'brandController@save',
+Route::post('/brand/save', [
+ 'uses'  => 'brandController@saveBrand',
  'as'    =>  'new-brand'
+]);
+Route::get('/product/add', [
+ 'uses'  => 'productController@index',
+ 'as'    =>  'add-product'
+]);
+Route::post('/product/save', [
+ 'uses'  => 'productController@saveProduct',
+ 'as'    =>  'new-product'
+]);
+Route::get('/product/manage', [
+ 'uses'  => 'productController@manageProduct',
+ 'as'    =>  'manage-product'
 ]);
 
 Auth::routes();

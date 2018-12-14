@@ -24,7 +24,11 @@
     <link href="{{ asset('/') }}/back-end/css/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="{{ asset('/') }}/back-end/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('/') }}back-end/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <script src="{{ asset('/') }}back-end/ckeditor/ckeditor.js"></script>
+    <script src="{{ asset('/') }}back-end/ckeditor/js/sample.js"></script>
+    <link rel="stylesheet" href="{{ asset('/') }}back-end/ckeditor/css/samples.css">
+    <link rel="stylesheet" href="{{ asset('/') }}back-end/ckeditor/toolbarconfigurator/lib/codemirror/neo.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -304,6 +308,18 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>Product Info<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{ route('add-product') }}">Add Product</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('manage-product') }}">Manage Product</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                         <li>
@@ -400,6 +416,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="{{ asset('/') }}/back-end/js/sb-admin-2.js"></script>
+    <script>
+    initSample();
+</script>
 
 </body>
 
