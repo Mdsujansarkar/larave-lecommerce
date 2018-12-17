@@ -8,21 +8,24 @@ use Illuminate\Http\Request;
 class NewShopController extends Controller
 {
     public function index(){
-    	$categories = Category::where('publication_status', 1)->get();
+    
     	$newProducts = Product::where('publication_status',1)
     	             ->orderBy('id','DESC')
     	             ->take(8)
     	             ->get();
 
     	return view('front-end.home.home', [
-    		'categories' => $categories,
+    		
     		'newProducts' => $newProducts
     	]);
     }
-    public function categoryProducts(){
-    	$categories = Category::where('publication_status', 1)->get();
-    	return view('front-end.category.category-content',[
-    		'categories' => $categories
+    public function categoryProducts($id){
+      $categoryProducts	= Product::where('category_id', $id)
+    	         ->where('publication_status', 1)
+    	         ->get();
+    	//$categories = Category::where('publication_status', 1)->get();
+    	return view('front-end.category.category-content', [
+           'categoryProducts' => $categoryProducts
     	]);
 
     }
