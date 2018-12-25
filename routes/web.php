@@ -83,6 +83,16 @@ Route::get('/product/manage', [
  'as'    =>  'manage-product'
 ]);
 
+Route::get('/product/edit/{id}', [
+ 'uses'  => 'productController@editProduct',
+ 'as'    =>  'edit-product'
+]);
+
+Route::post('/addToCart', [
+ 'uses'  => 'cartController@addToCart',
+ 'as'    =>  'add-to-card'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

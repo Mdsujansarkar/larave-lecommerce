@@ -7,9 +7,9 @@
     </div>
     <div class="panel-body"> 
     	{{ Session::get('message') }}
-     {{ Form::open(['route' =>'new-product', 'method'=>'POST', 'class'=>'form-horizontal','files' => true])}}
+     {{ Form::open(['route' =>'edit-product', 'method'=>'POST', 'class'=>'form-horizontal','files' => true, 'name' => 'editProductFrom'])}}
        <div class="form-group">
-        <label for="" class="control-label col-md-4">Category name</label>
+        <label for="" class="control-label col-md-4">product name</label>
         <div class="col-md-8"> 
             <select name="category_id"  class="from-control">
             <option value="">Select category</option>

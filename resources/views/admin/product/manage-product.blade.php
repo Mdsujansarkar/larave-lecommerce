@@ -20,21 +20,33 @@
        <th>Action</th>
       </tr>
       
-      <tr> 
         @php($i = 1)
+        
         @foreach($products as $product)
-        @php(var_dump($product))
+      <tr> 
+        
         <td>{{ $i++ }}</td>
         <td>{{ $product -> category_name }}</td>
-        <td>demo</td>
-        <td>demo</td>
-        <td>demo</td>
-        <td>demo</td>
-        <td>demo</td>
-        <td>demo</td>
-        <td>demo</td>
-        @endforeach
+        <td>{{ $product -> brand_name}}</td>
+        <td>{{ $product -> product_name}}</td>
+        <td>
+          <img src="{{ asset($product -> product_image)}}" alt="">
+        </td>
+        <td>{{ $product -> product_price}}</td>
+        <td>{{ $product -> product_quintity}}</td>
+        <td>{{ $product -> publication_status}}</td>
+        <td>
+           @if($category ->publication_status == 1)
+          <button class="btn-warning"><a href="{{ route('unpublished-category', ['id' =>$category->id]) }}">up</a></button> 
+         @else  
+         <button class="btn-success"><a href="{{route('publish-category', ['id' => $category-> id]) }}">down</a></button>
+         @endif
+         <button class="btn-info btn-button "><a href="{{route('edit-product', ['id' => $product-> id]) }}" >edit</a></button>
+         <button class="btn-warning btn-button "><a href="{{route('delete-product', ['id' => $product-> id]) }}" >delete</a></button>
+        </td>
+        
       </tr>
+      @endforeach
      
     </table>
     </div>
