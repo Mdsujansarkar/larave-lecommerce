@@ -33,4 +33,9 @@ class NewShopController extends Controller
     	return view('front-end.mail.maleUs');
 
     }
+
+    public function ProductsDetails($id){
+    	 $product = Product::find($id);
+    	return view('front-end.product.products-details', ['product' => $product]);
+    }
 }

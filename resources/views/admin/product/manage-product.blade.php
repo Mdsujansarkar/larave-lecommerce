@@ -21,6 +21,11 @@
       </tr>
       
       <tr> 
+        @php($i = 1)
+        @foreach($products as $product)
+        @php(var_dump($product))
+        <td>{{ $i++ }}</td>
+        <td>{{ $product -> category_name }}</td>
         <td>demo</td>
         <td>demo</td>
         <td>demo</td>
@@ -28,8 +33,7 @@
         <td>demo</td>
         <td>demo</td>
         <td>demo</td>
-        <td>demo</td>
-        <td>demo</td>
+        @endforeach
       </tr>
      
     </table>

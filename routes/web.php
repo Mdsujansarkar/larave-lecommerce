@@ -19,6 +19,10 @@ Route::get('/category-products/{id}', [
  'uses'  => 'NewShopController@categoryProducts',
  'as'    =>  'category-products'
 ]);
+Route::get('/products-details/{id}', [
+ 'uses'  => 'NewShopController@ProductsDetails',
+ 'as'    =>  'products-details'
+]);
 Route::get('/mail-us', [
  'uses'  => 'NewShopController@mailUs',
  'as'    =>  'mail-us'

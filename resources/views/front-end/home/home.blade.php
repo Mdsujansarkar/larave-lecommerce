@@ -38,7 +38,6 @@ pauseOnHover: false,
 interval: 3000,
 controlNavEnabled: true
 });
-
 </script>
 
 </div>	
@@ -100,12 +99,12 @@ controlNavEnabled: true
 			<div class="grid-arr">
 				<div  class="grid-arrival">
 					<figure>		
-						<a href="#" class="new-gri" data-toggle="modal" data-target="#myModal1">
+						<a href="{{route('products-details', ['id' => $newProduct->id])}}" class="new-gri">
 							<div class="grid-img">
 								<img  src="{{ asset($newProduct->product_image) }}" class="img-responsive" alt="">
 							</div>
 							<div class="grid-img">
-								<img  src="{{ asset($newProduct->product_image) }}/front-end/images/p5.jpg" class="img-responsive"  alt="">
+								<img  src="{{ asset($newProduct->product_image) }}" class="img-responsive"  alt="">
 							</div>			
 						</a>		
 					</figure>	

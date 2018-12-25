@@ -44,6 +44,18 @@ pager: true,
 <!--start-rate-->
 <script src="{{ asset('/') }}/front-end/js/jstarbox.js"></script>
 <link rel="stylesheet" href="{{ asset('/') }}/front-end/css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
+  <script defer src="{{ asset('/') }}/front-end/js/jquery.flexslider.js"></script>
+<link rel="stylesheet" href="{{ asset('/') }}/front-end/css/flexslider.css" type="text/css" media="screen" />
+<script src="{{ asset('/') }}/front-end/js/imagezoom.js"></script>
+<script>
+// Can also be used with $(document).ready()
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide",
+    controlNav: "thumbnails"
+  });
+});
+</script>
 <script type="text/javascript">
 jQuery(function() {
 jQuery('.starbox').each(function() {
@@ -65,6 +77,20 @@ return val;
 });
 });
 </script>
+<link href="{{ asset('/') }}/front-end/css/owl.carousel.css" rel="stylesheet">
+<script src="{{ asset('/') }}/front-end/js/owl.carousel.js"></script>
+	<script>
+		$(document).ready(function() {
+		$("#owl-demo").owlCarousel({
+			items : 1,
+			lazyLoad : true,
+			autoPlay : true,
+			navigation : false,
+			navigationText :  false,
+			pagination : true,
+		});
+		});
+	</script>
 <!--//End-rate-->
 </head>
 <body>
